@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "nodemon ./index.js"
+    "dev": "nodemon ./src/index.js"
   },
   "dependencies": {
     "-": "^0.0.1",
