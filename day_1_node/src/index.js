@@ -41,7 +41,7 @@ const baseResponse = (res,statusCode,type,body) => {
 
 http.createServer(async (req,res) => {
   // 流  request response
-  const {url,method} = req;
+  const {url,method,headers} = req;
   if(url === '/' && method == 'GET'){
     const data = await getFile(resolve("../public/index.html")).catch(err => {
       console.error(err)
@@ -49,7 +49,12 @@ http.createServer(async (req,res) => {
       return
     })
     baseResponse(res,200,'text/html',data)
-  }else{
+  }
+  else if(method === 'GET' && headers.accept.indexOf('image/*') !== -1){
+    // 获取 所有图片
+    fs.createReadStream('.'+url).pipe(res)
+  }
+  else{
     baseResponse(res,400,'text','找不到资源!')
   }
 })
