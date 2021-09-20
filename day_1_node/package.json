@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "nodemon ./src/index.js"
+    "http-dev": "nodemon ./src/http-server/index.js"
   },
   "dependencies": {
     "-": "^0.0.1",
