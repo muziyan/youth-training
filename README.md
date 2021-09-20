@@ -5,7 +5,7 @@
 > nodejs 实战
 
 ### 1. fs api
-> 文件系统模块
+> 文件系统模块  
 > const fs = require('fs')
 ```js
   // 同步读取 二进制文件 图片 视频  
@@ -40,7 +40,7 @@
 ```
 
 ### 2. buffer 
-> 缓冲区
+> 缓冲区  
 > const Buffer = require('buffer')
 ```js
   const buf1 = Buffer.alloc(10);
@@ -59,8 +59,8 @@
 ```
 
 ### 3. http 
-> http 服务
-> const http = require('http')
+> http 服务  
+> const http = require('http')  
 > const fs = require('fs')
 ```js
   // 创建http服务
