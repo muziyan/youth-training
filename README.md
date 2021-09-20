@@ -39,3 +39,22 @@
   })()
 ```
 
+### 2. buffer 
+> 缓冲区
+> const Buffer = require('buffer')
+```js
+  const buf1 = Buffer.alloc(10);
+  console.log(buf1)  // => 二进制 <Buffer 00 00 00 00>
+
+  const buf2 = bUFFER.FROM('a');
+
+
+  const buf3 = Buffer.from('文本')
+  console.log(buf3)  // => utf-8 utf-16 utf-32 格式
+
+  const buf4 = Buffer.concat([]);
+  console.log(buf4) // => 
+
+
+```
+
