@@ -108,3 +108,19 @@
   // 通常后端来设置 
   // 前端可以通过 proxy 代理来绕过跨域问题
 ```
+
+
+### 4. steam
+> 文件流  
+> const fs = require('fs')
+```js
+  // 1.png => 2.png fs read write 
+
+  // 读取 
+  const readStream = fs.createReadStream('path/to/filename')
+  // 写入
+  const writeStream = fs.createWriteStream('path/to/filename')
+  // 复制
+  readStream.pipe(writeStream);
+  
+```
