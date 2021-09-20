@@ -124,3 +124,13 @@
   readStream.pipe(writeStream);
   
 ```
+
+### CLI工具
+> 约定路由 => 按照规则来创建文件夹,我们编写的程序来按照规则来读取执行  
+> bin 目录下运行 npm link 可以绑定到全局指令
+```js
+#!/usr/bin/env node
+//指定执行环境
+// TODO 
+
+```
