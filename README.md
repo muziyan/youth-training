@@ -58,3 +58,53 @@
 
 ```
 
+### 3. http 
+> http 服务
+> const http = require('http')
+> const fs = require('fs')
+```js
+  // 创建http服务
+  // req 请求
+  // res 响应
+  // listen(port,callback) 链式调用监听 
+  // port 监听的端口号
+  // callback 启动服务的回调
+  http.createServer((req,res) => {
+    // 流  request response
+    const {url,method} = request;
+    if(url === '/' && method == 'GET'){
+      fs.readFile('path/to/filename',(err,data) => {
+        // 错误拦截
+        if(err){
+          res.writeHead(500,{
+            'Content-Type' : 'text/plain;charset=utf-8'
+          })
+          res.end('500 服务器异常!')
+          return
+        }
+
+        // 请求正确返回数据
+        res.statusCode = 200
+        res.setHeader('Content-Type','text/html')
+        res.end(data)
+      })
+    }else{
+      // 找不到请求返回
+      res.statusCode = 400
+      res.setHeader('Content-Type','text/plain;charset=utf-8')
+      res.end('404 找不到资源!')
+    }
+
+
+    // 响应
+    // res.writeHead(200) // 返回的响应状态码
+    // res.end("hello node!")  // 返回的响应主体
+  })
+  .listen(3000, () => {
+    console.log('current listening port is 3000')
+  })
+
+  // 跨域问题 是由于浏览器同源策略不允许访问
+  // 通常后端来设置 
+  // 前端可以通过 proxy 代理来绕过跨域问题
+```
